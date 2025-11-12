@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthShell from "../components/AuthShell";
 import TextInput from "../components/TextInput";
-import {register} from "../jsApiComponents/auth"
+import { register } from "../jsApiComponents/auth"
 
 export function Register() {
 
@@ -18,7 +18,7 @@ export function Register() {
     password: "",
     telefono: "",
     edad: "",
-    genero: "", 
+    genero: "",
   });
   const [err, setErr] = useState("");
 
@@ -52,6 +52,10 @@ export function Register() {
       <form onSubmit={submit} noValidate>
         <TextInput name="nombre" value={form.nombre} onChange={onChange} placeholder="Nombre" />
         <TextInput name="apellidos" value={form.apellidos} onChange={onChange} placeholder="Apellidos" required={false} />
+
+        <TextInput name="email" value={form.email} onChange={onChange} placeholder="email@example.com" type="email" />
+        <TextInput name="password" value={form.password} onChange={onChange} placeholder="********" withToggle />
+        <div className="small-note">La contraseña debe tener 8 o más caracteres.</div>
 
         <TextInput name="email" value={form.email} onChange={onChange} placeholder="email@example.com" type="email" />
         <TextInput name="password" value={form.password} onChange={onChange} placeholder="********" withToggle />
