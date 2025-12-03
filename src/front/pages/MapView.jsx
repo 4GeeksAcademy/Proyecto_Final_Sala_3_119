@@ -192,6 +192,8 @@ import { CreateActivityPopup } from "../components/CreateActivityPopup";
 import { user } from "../jsApiComponents/user";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export const MapView = () => {
   const [activities, setActivities] = useState([]);
@@ -454,6 +456,7 @@ export const MapView = () => {
             
             <button className="px-4 py-2 neon-button" onClick={() => navigate("/eventos")} >Ver todos los eventos →</button>
           </div>
+
 
         </div>
 
