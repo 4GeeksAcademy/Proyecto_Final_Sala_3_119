@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Typography, Card, CardContent, CardMedia, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {sportImages}  from "../jsApiComponents/sportsImages"
-
+import { toast } from "react-toastify";
 export const Eventos = () => {
   const [events, setEvents] = useState([]);
   const [search, setSearch] = useState("");
@@ -270,10 +270,11 @@ export const Eventos = () => {
   const getSportImage = (sport) => {
     return sportImages[sport] ?? "https://via.placeholder.com/400";
   }
-  // ➕ JOIN EVENT
+
+
   const joinEvent = async (event) => {
     if (event.participants.length >= event.max_participants) {
-      alert("Este evento ya está lleno.");
+      toast.error("Este evento ya está lleno.");;
       return;
     }
 
@@ -292,10 +293,12 @@ export const Eventos = () => {
         throw new Error(err.error || "No se pudo unir al evento");
       }
 
-      alert(`Te has unido a: ${event.title}`);
+      toast.success(`Te has unido a: ${event.title}`);
+
       fetchEvents();
     } catch (err) {
-      alert(err.message);
+      toast.error(err.message);
+
     }
   };
 

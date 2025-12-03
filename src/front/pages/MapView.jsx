@@ -451,12 +451,8 @@ export const MapView = () => {
           </div>
 
           <div className="text-center mt-3">
-            <a
-              href="/eventos"
-              className="px-4 py-2 neon-button"
-            >
-              Ver todos los eventos →
-            </a>
+            
+            <button className="px-4 py-2 neon-button" onClick={() => navigate("/eventos")} >Ver todos los eventos →</button>
           </div>
 
         </div>

@@ -247,10 +247,11 @@ export const Profile = () => {
               </Row>
             )}
 
+
             {/* EVENTOS CREADOS */}
             {profileTab === "created" && (
               <Row className="g-4 justify-content-center w-100 px-2">
-                <Col className="d-flex justify-content-center">
+                <Col className="d-flex justify-content-center m-2">
                   <Card className="profile-stable-card text-center">
                     <CreatedEvents />
                   </Card>
@@ -261,7 +262,7 @@ export const Profile = () => {
             {/* EVENTOS APUNTADOS */}
             {profileTab === "joined" && (
               <Row className="g-4 justify-content-center w-100 px-2">
-                <Col className="d-flex justify-content-center">
+                <Col className="d-flex justify-content-center m-2">
                   <Card className="profile-stable-card text-center">
                     <JoinedEvents />
                   </Card>
