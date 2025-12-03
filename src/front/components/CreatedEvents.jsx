@@ -58,19 +58,19 @@ export default function CreatedEvents() {
   }, []);
 
   return (
-    <div className="container py-4 text-light custom-container-bg">
+    <div className="container py-4 text-light custom-container-bg ">
       <h3 className="mb-3"><i className="fa-regular fa-clipboard"></i> Eventos creados por mí</h3>
 
       {createdEvents.length === 0 && <p>No has creado ningún evento todavía.</p>}
 
       {createdEvents.map(event => (
-        <div key={event.id} className="card p-3 mb-3 bg-secondary text-light custom-bg shadow-sm custom-overflow">
+        <div key={event.id} className="card p-3 mb-3 bg-secondary text-light custom-bg shadow-sm custom-overflow ">
           <h5><i className="fa-solid fa-magnifying-glass"></i> {event.title}</h5>
           <p><strong>Deporte:</strong> {event.sport}</p>
           <p><strong>Fecha:</strong> {event.date}</p>
           <p><strong>Descripción:</strong> {event.description}</p>
           <p><strong>Participantes:</strong> {event.participants.length}/{event.max_participants}</p>
-
+          
           <a
             href={`https://www.google.com/maps?q=${event.latitude},${event.longitude}`}
             target="_blank"

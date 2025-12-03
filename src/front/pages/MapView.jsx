@@ -256,7 +256,7 @@ export const MapView = () => {
     try {
       const response = await user();
 
-      if (response.ok) return; // 👍 Usuario correcto
+      if (response.ok) return; 
 
       if (response.status === 401) {
         toast.warning("⚠️ Tu sesión ha caducado");
@@ -333,7 +333,7 @@ export const MapView = () => {
 
 
         {/* 🗺️ MAPA */}
-        <div className="col-12 col-xl-6 d-flex justify-content-center align-items-center p-3 mt-5">
+        <div className="col-12 col-xl-6 d-flex justify-content-center align-items-center p-3 mt-5 ">
 
           {showMapTip && (
             <div className="tip-bubble map-tip" style={{ top: "100px", right: "650px", zIndex: 9999 }}>
@@ -453,12 +453,8 @@ export const MapView = () => {
           </div>
 
           <div className="text-center mt-3">
-            <Link
-              to="/eventos"
-              className="px-4 py-2 neon-button"
-            >
-              Ver todos los eventos →
-            </Link>
+            
+            <button className="px-4 py-2 neon-button" onClick={() => navigate("/eventos")} >Ver todos los eventos →</button>
           </div>
 
 

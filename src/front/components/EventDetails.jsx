@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./EventDetails.css";
+import { toast } from "react-toastify";
 
 // SVG
 const IconAdmin = ({ className = "" }) => (
@@ -75,7 +76,8 @@ export const EventDetails = () => {
       setRating(data.average_rating ?? data.rating ?? value);
     } catch (err) {
       console.error(err);
-      alert("Gracias ;)");
+toast.success("Gracias 😉");
+
     }
   };
 
@@ -92,10 +94,12 @@ export const EventDetails = () => {
       if (!resp.ok) throw new Error("No se pudo dar de baja");
 
       if (resp.ok) {
-        alert("Te has dado de baja del evento");
+        toast.info("Te has dado de baja del evento");
+
       }
     } catch (err) {
-      alert(err.message);
+      toast.error(err.message);
+
     }
   };
 
